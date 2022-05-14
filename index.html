@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/gif" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Koulen&family=Libre+Bodoni:ital@1&display=swap");
+      * {
+        font-family: "Koulen", cursive;
+      }
+      div.container {
+        position: absolute;
+        top: 40%;
+        left: 40%;
+      }
+
+      button {
+        background-color: cornsilk;
+        border: 1px solid black;
+        color: black;
+        padding: 10px 20px;
+        width: max-content;
+        text-align: center;
+        text-decoration: none;
+        font-size: large;
+        margin: auto;
+        border-radius: 10px;
+        vertical-align: middle;
+        margin-inline: 25%;
+      }
+
+      button:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Background color is <span id="color">white</span></h2>
+      <button>Change Color</button>
+    </div>
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", clicked);
+      const colors = [
+        "white",
+        "red",
+        "blue",
+        "brown",
+        "orange",
+        "green",
+        "yellow",
+        "pink",
+        "teal",
+      ];
+      function clicked() {
+        const background = colors[Math.floor(Math.random() * colors.length)];
+        document.body.style.backgroundColor = background;
+        document.getElementById("color").textContent = background;
+      }
+    </script>
+  </body>
+</html>
